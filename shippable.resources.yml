@@ -1,5 +1,5 @@
 resources:
-  - name: ddc-cluster
+  - name: ddc-clusterper
     type: cluster
     integration: ship-ddc1
     pointer:
@@ -7,7 +7,7 @@ resources:
     flags:
       - ddc-cluster
 
-  - name: cluster-dcl
+  - name: cluster-dclper
     type: cluster
     integration: ship-dcl
     pointer:
@@ -15,7 +15,7 @@ resources:
     flags:
       - cluster-dcl
       
-  - name: cluster-dclinavlid
+  - name: cluster-dclinavlidper
     type: cluster
     integration: ship-dcl
     pointer:
@@ -23,7 +23,7 @@ resources:
     flags:
       - cluster-dcl
 
-  - name: ecs-cluster
+  - name: ecs-clusterper
     type: cluster
     integration: ship-awsnew
     pointer:
@@ -32,7 +32,7 @@ resources:
     flags:
       - ecs-cluster
       
-  - name: gke-cluster
+  - name: gke-clusterper
     type: cluster
     integration: ship-gke
     pointer:
@@ -41,7 +41,7 @@ resources:
     flags:
       - gke-cluster
       
-  - name: tripub-cluster4
+  - name: tripub-cluster4per
     type: cluster
     integration: ship-tri
     pointer:
@@ -50,7 +50,7 @@ resources:
     flags:
       - tripub-cluster3
       
-  - name: plv2-image12
+  - name: plv2-image12per
     type: image
     integration: ship4-docker
     pointer:
@@ -58,7 +58,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: plv21
+  - name: plv21per
     type: image
     integration: ship4-docker
     pointer:
@@ -66,14 +66,14 @@ resources:
     seed:
       versionName: "latest"
       
-  - name: myEmail
+  - name: myEmailper
     type: notification
     integration: email
     pointer:
       recipients: 
         -  "sreya@shippable.com"
       
-  - name: plv2-image2
+  - name: plv2-image2per
     type: image
     integration: ship4-docker
     pointer:
@@ -81,7 +81,7 @@ resources:
     seed:
       versionName: "deploy.5"
 
-  - name: plv2-dopts1
+  - name: plv2-dopts1per
     type: dockerOptions
     version:
       memory: 64
@@ -101,20 +101,20 @@ resources:
       #publishAllPorts assigns a public ip to the container and gives endpoint
       #for accessing the exposed ports.
   
-  - name: plv2-params1
+  - name: plv2-params1per
     type: params
     version:
       params:
         MONGO_API_URL: "localhost:28017"
       
-  - name: plv2-scale2
+  - name: plv2-scale2per
     type: replicas
     version:
       count: 2
     flags:
       - plv2-scale2
   
-  - name: plv2-version
+  - name: plv2-versionper
     type: version
     seed:
       versionName: "1.1.1-beta"
@@ -124,7 +124,7 @@ resources:
   #   version: 
   #     counter: 1
   
-  - name: flecs-dopts5
+  - name: flecs-dopts5per
     type: dockerOptions
     version:
       links:
@@ -132,13 +132,13 @@ resources:
       volumesFrom:
         - "fl-img5workingdir:ro"
         
-  - name: foo-resource
+  - name: foo-resourceper
     type: params
     version:
       params:
         foo: bar
         secure: FfoITh21fnJk71mk+PZXmGtDX9BnwQnh1tkwBhTrpJJCYzzjZ8BmVQIeieEXqnK2czWVfzwzpu9LKbAyOgpreVzjK7gzs1UyVw6qBmUjFfjLZ87aeFH9Ph6nF3qPEqI/oU2SvFSyDAWTd+R5BfDEpuH9fG/XRJGWS8n3w4PmkZjjxA013B1m/pYDELmKxPzYmFCkQxR6PwM5mqiu286j+zniE09OtvK1Wu3hIwUsp1UA65HCfVVTC1PYi9mg+JG1q2V0UtMvKejERI002V7cO+ZWODwCE7rUpq/rXDcx8xyWEFG+w6NDY4NlSZ0wGJPZY7VmRzwyWOmgyx5d7XXn1Q==
-  - name: plv2-envimage
+  - name: plv2-envimageper
     type: image
     integration: ship4-docker
     pointer:
