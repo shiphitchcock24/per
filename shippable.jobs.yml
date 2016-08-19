@@ -45,11 +45,11 @@ jobs:
   #     - TASK: managed
   #   #  bump: major
           
-   - name: plv2-ddcdeployn5per
-     type: deploy
-     steps:
-       - IN: plv2-man5per
-       - IN: ddc-clusterper
+  - name: plv2-ddcdeployn5per
+    type: deploy
+    steps:
+      - IN: plv2-man5per
+      - IN: ddc-clusterper
       #- IN: plv2-scale2
       
   # - name: b-mon-dcl109n
