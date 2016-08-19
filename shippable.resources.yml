@@ -5,7 +5,7 @@ resources:
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
     flags:
-      - ddc-cluster
+      - ddc-clusterper
 
   # - name: cluster-dclper
   #   type: cluster
