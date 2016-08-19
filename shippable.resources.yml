@@ -7,48 +7,48 @@ resources:
     flags:
       - ddc-cluster
 
-  - name: cluster-dclper
-    type: cluster
-    integration: ship-dcl
-    pointer:
-      sourceName: "cluster-dcl"
-    flags:
-      - cluster-dcl
+  # - name: cluster-dclper
+  #   type: cluster
+  #   integration: ship-dcl
+  #   pointer:
+  #     sourceName: "cluster-dcl"
+  #   flags:
+  #     - cluster-dcl
       
-  - name: cluster-dclinavlidper
-    type: cluster
-    integration: ship-dcl
-    pointer:
-      sourceName: "cluster-dcl"
-    flags:
-      - cluster-dcl
+  # - name: cluster-dclinavlidper
+  #   type: cluster
+  #   integration: ship-dcl
+  #   pointer:
+  #     sourceName: "cluster-dcl"
+  #   flags:
+  #     - cluster-dcl
 
-  - name: ecs-clusterper
-    type: cluster
-    integration: ship-awsnew
-    pointer:
-      sourceName : "default"
-      region: "us-west-2"
-    flags:
-      - ecs-cluster
+  # - name: ecs-clusterper
+  #   type: cluster
+  #   integration: ship-awsnew
+  #   pointer:
+  #     sourceName : "default"
+  #     region: "us-west-2"
+  #   flags:
+  #     - ecs-cluster
       
-  - name: gke-clusterper
-    type: cluster
-    integration: ship-gke
-    pointer:
-      sourceName: "small-cluster" #name of the cluster we are deploying.
-      region: "us-east1-d"
-    flags:
-      - gke-cluster
+  # - name: gke-clusterper
+  #   type: cluster
+  #   integration: ship-gke
+  #   pointer:
+  #     sourceName: "small-cluster" #name of the cluster we are deploying.
+  #     region: "us-east1-d"
+  #   flags:
+  #     - gke-cluster
       
-  - name: tripub-cluster4per
-    type: cluster
-    integration: ship-tri
-    pointer:
-      sourceName: "defaultsreya" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-2"
-    flags:
-      - tripub-cluster3
+  # - name: tripub-cluster4per
+  #   type: cluster
+  #   integration: ship-tri
+  #   pointer:
+  #     sourceName: "defaultsreya" # we can give anything it deploy instances based on region not by cluster name
+  #     region: "us-east-2"
+  #   flags:
+  #     - tripub-cluster3
       
   - name: plv2-image12per
     type: image
@@ -58,36 +58,36 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: plv21per
-    type: image
-    integration: ship4-docker
-    pointer:
-      sourceName: "library/nginx"
-    seed:
-      versionName: "latest"
+  # - name: plv21per
+  #   type: image
+  #   integration: ship4-docker
+  #   pointer:
+  #     sourceName: "library/nginx"
+  #   seed:
+  #     versionName: "latest"
       
-  - name: myEmailper
-    type: notification
-    integration: email
-    pointer:
-      recipients: 
-        -  "sreya@shippable.com"
+  # - name: myEmailper
+  #   type: notification
+  #   integration: email
+  #   pointer:
+  #     recipients: 
+  #       -  "sreya@shippable.com"
       
-  - name: plv2-image2per
-    type: image
-    integration: ship4-docker
-    pointer:
-      sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
-    seed:
-      versionName: "deploy.5"
+  # - name: plv2-image2per
+  #   type: image
+  #   integration: ship4-docker
+  #   pointer:
+  #     sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
+  #   seed:
+  #     versionName: "deploy.5"
 
-  - name: plv2-dopts1per
-    type: dockerOptions
-    version:
-      memory: 64
-      cpuShares: 8
-      portMappings:
-        - "80:80"
+  # - name: plv2-dopts1per
+  #   type: dockerOptions
+  #   version:
+  #     memory: 64
+  #     cpuShares: 8
+  #     portMappings:
+  #       - "80:80"
       
 #  - name: plv2-tpdopts2
  #   type: dockerOptions
@@ -107,44 +107,44 @@ resources:
       params:
         MONGO_API_URL: "localhost:28017"
       
-  - name: plv2-scale2per
-    type: replicas
-    version:
-      count: 2
-    flags:
-      - plv2-scale2
+  # - name: plv2-scale2per
+  #   type: replicas
+  #   version:
+  #     count: 2
+  #   flags:
+  #     - plv2-scale2
   
-  - name: plv2-versionper
-    type: version
-    seed:
-      versionName: "1.1.1-beta"
+  # - name: plv2-versionper
+  #   type: version
+  #   seed:
+  #     versionName: "1.1.1-beta"
       
   # - name: glab-kickstart
   #   type: kickStart
   #   version: 
   #     counter: 1
   
-  - name: flecs-dopts5per
-    type: dockerOptions
-    version:
-      links:
-        - "fl-img5workingdir"
-      volumesFrom:
-        - "fl-img5workingdir:ro"
+  # - name: flecs-dopts5per
+  #   type: dockerOptions
+  #   version:
+  #     links:
+  #       - "fl-img5workingdir"
+  #     volumesFrom:
+  #       - "fl-img5workingdir:ro"
         
-  - name: foo-resourceper
-    type: params
-    version:
-      params:
-        foo: bar
-        secure: FfoITh21fnJk71mk+PZXmGtDX9BnwQnh1tkwBhTrpJJCYzzjZ8BmVQIeieEXqnK2czWVfzwzpu9LKbAyOgpreVzjK7gzs1UyVw6qBmUjFfjLZ87aeFH9Ph6nF3qPEqI/oU2SvFSyDAWTd+R5BfDEpuH9fG/XRJGWS8n3w4PmkZjjxA013B1m/pYDELmKxPzYmFCkQxR6PwM5mqiu286j+zniE09OtvK1Wu3hIwUsp1UA65HCfVVTC1PYi9mg+JG1q2V0UtMvKejERI002V7cO+ZWODwCE7rUpq/rXDcx8xyWEFG+w6NDY4NlSZ0wGJPZY7VmRzwyWOmgyx5d7XXn1Q==
-  - name: plv2-envimageper
-    type: image
-    integration: ship4-docker
-    pointer:
-      sourceName: "scriptnull/busybox"
-    seed:
-      versionName: "nodeenv"
+  # - name: foo-resourceper
+  #   type: params
+  #   version:
+  #     params:
+  #       foo: bar
+  #       secure: FfoITh21fnJk71mk+PZXmGtDX9BnwQnh1tkwBhTrpJJCYzzjZ8BmVQIeieEXqnK2czWVfzwzpu9LKbAyOgpreVzjK7gzs1UyVw6qBmUjFfjLZ87aeFH9Ph6nF3qPEqI/oU2SvFSyDAWTd+R5BfDEpuH9fG/XRJGWS8n3w4PmkZjjxA013B1m/pYDELmKxPzYmFCkQxR6PwM5mqiu286j+zniE09OtvK1Wu3hIwUsp1UA65HCfVVTC1PYi9mg+JG1q2V0UtMvKejERI002V7cO+ZWODwCE7rUpq/rXDcx8xyWEFG+w6NDY4NlSZ0wGJPZY7VmRzwyWOmgyx5d7XXn1Q==
+  # - name: plv2-envimageper
+  #   type: image
+  #   integration: ship4-docker
+  #   pointer:
+  #     sourceName: "scriptnull/busybox"
+  #   seed:
+  #     versionName: "nodeenv"
  # - name: infra-repo
   #  type: gitRepo
   #  integration: github
